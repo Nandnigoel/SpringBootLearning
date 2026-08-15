@@ -1,13 +1,17 @@
 package com.nandni.springbootlearning;
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Component
 public class Car {
+
     private Engine engine;
-    public Car(Engine engine){
+    @Autowired
+    public Car(@Qualifier("petrolEngine") Engine engine){
         this.engine=engine;
     }
     public void start(){
-        System.out.println("Car started using Engine: "+engine);
+        engine.start();
     }
 }
