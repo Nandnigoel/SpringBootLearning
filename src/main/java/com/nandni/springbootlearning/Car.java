@@ -8,7 +8,7 @@ public class Car {
 
     private Engine engine;
     @Autowired
-    public Car(@Qualifier("petrolEngine") Engine engine){
+    public Car(Engine engine){
         this.engine=engine;
     }
     public void start(){
